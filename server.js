@@ -18,7 +18,10 @@ const port = process.env.PORT || 8000;
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:8080",
+    origin: [
+      "https://socket-chat-application.vercel.app/",
+      "http://localhost:8080",
+    ],
     methods: ["GET", "POST"],
     credentials: true,
   },
